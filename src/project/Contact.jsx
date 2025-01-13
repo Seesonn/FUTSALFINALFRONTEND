@@ -5,7 +5,7 @@ import contactbg from '../assets/ful.jpg'
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically handle form submission
+    // Here we would typically handle form submission
     // For now, we'll just log to the console
     console.log('Form submitted')
   }
