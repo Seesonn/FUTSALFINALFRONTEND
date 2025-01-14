@@ -70,7 +70,7 @@ export default function CreateNewPassword() {
       setError('Passwords do not match');
       return;
     }
-    // Here you would typically call an API to update the password
+    // Here we would typically call an API to update the password
     console.log('Password updated');
     navigate('/login'); // Redirect to login page after password reset
   };

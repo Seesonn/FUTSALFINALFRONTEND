@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPinIcon, StarIcon } from 'lucide-react';
 
 export function FutsalCard({ name, location, imageUrl, rating }) {
@@ -27,9 +28,9 @@ export function FutsalCard({ name, location, imageUrl, rating }) {
           </div>
           
           <div className="flex items-center justify-between pt-2 sm:pt-3 border-t border-gray-200">
-            <button className="px-4 py-2 bg-green-600 text-white rounded-md font-medium transition-all duration-300 hover:bg-green-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <Link to="/booking"> <button className="px-4 py-2 bg-green-600 text-white rounded-md font-medium transition-all duration-300 hover:bg-green-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
               Book
-            </button>
+            </button></Link>
             <button className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md font-medium transition-all duration-300 hover:bg-gray-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
               View 
             </button>
