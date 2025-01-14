@@ -13,6 +13,7 @@ import BookingSlot from "./project/BookingSlots";
 import ForgotPassword from "./project/ForgetPassword";
 import CreatNewPassword from "./project/CreateNewPassword";
 import Dashboard from "./project/Dashboard";
+import View from "./project/view";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/verify" element={<VerificationCode />} />
             <Route path="/forget" element={<ForgotPassword />} />
             <Route path="/create-new-password" element={<CreatNewPassword />} />
+            <Route path="/view" element={<View />} />
           </Routes>
 
         </main>

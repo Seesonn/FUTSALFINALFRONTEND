@@ -31,9 +31,9 @@ export function FutsalCard({ name, location, imageUrl, rating }) {
           <Link to="/booking"> <button className="px-4 py-2 bg-green-600 text-white rounded-md font-medium transition-all duration-300 hover:bg-green-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
               Book
             </button></Link>
-            <button className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md font-medium transition-all duration-300 hover:bg-gray-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
+           <Link to="/view"> <button className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md font-medium transition-all duration-300 hover:bg-gray-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
               View 
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
