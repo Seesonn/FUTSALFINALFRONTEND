@@ -1,10 +1,8 @@
-'use client'
-
-import React, { useState, useRef, useEffect } from 'react';
-import OtpInput from './otp/OtpInput';
-import VerifyButton from './otp/VerifyButton';
-import RequestAgainLink from './otp/RequestAgainLink';
-import bgImage from '../assets/ful.jpg'; 
+import React, { useState, useRef, useEffect } from "react";
+import OtpInput from "./otp/OtpInput";
+import VerifyButton from "./otp/VerifyButton";
+import RequestAgainLink from "./otp/RequestAgainLink";
+import bgImage from "../assets/ful.jpg";
 
 export default function VerificationCode() {
   const [otp, setOtp] = useState(new Array(6).fill(""));
@@ -69,17 +67,19 @@ export default function VerificationCode() {
           className="w-full h-full object-cover opacity-90"
         />
       </div>
-      
+
       {/* Blur Overlay */}
       <div className="absolute inset-0 backdrop-blur-sm z-10"></div>
-      
+
       {/* Content */}
       <div className="w-full max-w-sm bg-green-100 bg-opacity-10 backdrop-blur-lg rounded-lg p-4 shadow-lg sm:p-6 z-20 m-4">
-        <h1 className="mb-4 text-center text-2xl font-semibold text-white sm:text-3xl">Verify</h1>
+        <h1 className="mb-4 text-center text-2xl font-semibold text-white sm:text-3xl">
+          Verify
+        </h1>
         <p className="mb-4 text-center text-sm text-white sm:text-base">
           Your code was sent to you via email
         </p>
-  
+
         <OtpInput
           otp={otp}
           inputRefs={inputRefs}
@@ -88,10 +88,10 @@ export default function VerificationCode() {
           handleKeyDown={handleKeyDown}
           handleClick={handleClick}
         />
-  
+
         <VerifyButton handleVerify={handleVerify} />
         <RequestAgainLink handleRequestAgain={handleRequestAgain} />
       </div>
     </div>
   );
-};
+}

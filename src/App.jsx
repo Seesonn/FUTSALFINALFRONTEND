@@ -1,29 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./project/Navigation";
-import Home from "./project/Home";
+import Home from "./project/HomePage";
 import About from "./project/About";
 import Contact from "./project/Contact";
 import Footer from "./project/Footer";
 import VerificationCode from "./project/VerificationCode";
 import Login from "./project/Login";
-import Register from "./project/Register";
+//import Register from "./project/Register";
 import FutsalCardPage from "./project/FutsalcardPage";
 import BookingSlot from "./project/BookingSlots";
 import ForgotPassword from "./project/ForgetPassword";
 import CreatNewPassword from "./project/CreateNewPassword";
 import Dashboard from "./project/Dashboard";
-import View from "./project/view";
+import OwnerDashboard from "./project/OwnerDashboard";
+import Register from "./project/ownerRegister";
+import NotFound from "./project/PaageNotFound";
 
+import View from "./project/view";
+import HomePage from "./project/HomePage";
 
 function App() {
   return (
     <Router>
       <div className="">
         {/* bg-[#04153F] min-h-screen flex flex-col */}
-         <Navigation />
+        {/* <Navigation /> */}
         <main className="flex-grow">
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact  />} />
@@ -35,17 +39,18 @@ function App() {
             <Route path="/forget" element={<ForgotPassword />} />
             <Route path="/create-new-password" element={<CreatNewPassword />} />
             <Route path="/view" element={<View />} />
-          </Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
 
+          
+          </Routes> */}
         </main>
-       
-        <Footer/> 
-       
-        
+        <NotFound />
+        <Dashboard />
+        <Register />
+        {/* <HomePage/> */}
       </div>
     </Router>
   );
 }
 
 export default App;
-

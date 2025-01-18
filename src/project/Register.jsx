@@ -1,5 +1,3 @@
-// 'use client'
-
 // import React from 'react'
 // import { Link } from 'react-router-dom'
 // import Soo from '../assets/messi.png'
@@ -16,10 +14,10 @@
 //           className="w-full h-full object-cover opacity-90"
 //         />
 //       </div>
-      
+
 //       {/* Blur Overlay */}
 //       <div className="absolute inset-0 backdrop-blur-sm z-10"></div>
-      
+
 //       {/* Content */}
 //       <div className="w-full max-w-4xl bg-green-200 bg-opacity-10 backdrop-blur-lg rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg z-20 m-4">
 //         <div className="w-full md:w-1/2 p-8">
@@ -88,19 +86,10 @@
 //   )
 // }
 
-
-
-
-
-
-
-
-'use client'
-
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Soo from '../assets/messi.png'
-import lbg from '../assets/ful.jpg'
+import React from "react";
+import { Link } from "react-router-dom";
+import Soo from "../assets/messi.png";
+import lbg from "../assets/ful.jpg";
 
 export default function Register() {
   return (
@@ -113,14 +102,16 @@ export default function Register() {
           className="w-full h-full object-cover opacity-90"
         />
       </div>
-      
+
       {/* Blur Overlay */}
       <div className="absolute inset-0 backdrop-blur-sm z-10"></div>
-      
+
       {/* Content */}
       <div className="w-full max-w-4xl bg-green-100 bg-opacity-10 backdrop-blur-lg rounded-lg overflow-hidden flex flex-col md:flex-row shadow-lg z-20 m-4">
         <div className="w-full md:w-1/2 p-8">
-          <h1 className="text-4xl font-bold mb-6 text-center text-white">Sign Up</h1>
+          <h1 className="text-4xl font-bold mb-6 text-center text-white">
+            Sign Up
+          </h1>
           <form className="space-y-4">
             <input
               type="text"
@@ -148,13 +139,9 @@ export default function Register() {
               className="w-full p-3 bg-[#ebf8ff] rounded-md"
             />
             <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="terms"
-                className="mr-2"
-              />
+              <input type="checkbox" id="terms" className="mr-2" />
               <label htmlFor="terms" className="text-sm">
-                I agree to the{' '}
+                I agree to the{" "}
                 <a href="#" className="text-[#04163d] hover:underline">
                   terms and conditions
                 </a>
@@ -166,7 +153,7 @@ export default function Register() {
               </button>
             </Link>
             <p className="mt-6 text-center text-sm text-white">
-              Already have an account?{' '}
+              Already have an account?{" "}
               <Link to="/login" className="text-white-400 hover:underline">
                 Login
               </Link>
@@ -182,6 +169,5 @@ export default function Register() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
