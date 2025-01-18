@@ -47,6 +47,7 @@ function App() {
         <NotFound />
         <Dashboard />
         <Register />
+        <BookingSlot/>
         {/* <HomePage/> */}
       </div>
     </Router>

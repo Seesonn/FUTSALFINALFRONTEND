@@ -158,20 +158,53 @@
 //   );
 // }
 
-
-
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const formatDate = (date) => {
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return `${days[date.getDay()]}, ${
+    months[date.getMonth()]
+  } ${date.getDate()}, ${date.getFullYear()}`;
 };
 
 const formatShortDate = (date) => {
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
 };
 
@@ -211,10 +244,12 @@ export default function BookingSlot() {
     return () => clearInterval(timer);
   }, [currentDate]);
 
-  const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   const timeSlots = Array.from({ length: 18 }, (_, i) => {
     const hour = (i + 6) % 24;
-    return `${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:00 ${hour < 12 ? 'AM' : 'PM'}`;
+    return `${hour === 0 ? 12 : hour > 12 ? hour - 12 : hour}:00 ${
+      hour < 12 ? "AM" : "PM"
+    }`;
   });
 
   const getNextWeek = () => {
@@ -229,17 +264,23 @@ export default function BookingSlot() {
     const slotDate = new Date(date);
     const [hours, minutes, period] = slot.match(/(\d+):(\d+) (\w+)/).slice(1);
     slotDate.setHours(
-      period === 'PM' && hours !== '12' ? parseInt(hours) + 12 : hours === '12' && period === 'AM' ? 0 : parseInt(hours),
+      period === "PM" && hours !== "12"
+        ? parseInt(hours) + 12
+        : hours === "12" && period === "AM"
+        ? 0
+        : parseInt(hours),
       parseInt(minutes)
     );
 
-    const bookingKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${slot}`;
-    
+    const bookingKey = `${date.getFullYear()}-${String(
+      date.getMonth() + 1
+    ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}-${slot}`;
+
     if (isBefore(slotDate, new Date())) {
       setAlertMessage({
-        type: 'error',
-        title: 'Selection Error',
-        description: 'Cannot select slots in the past.'
+        type: "error",
+        title: "Selection Error",
+        description: "Cannot select slots in the past.",
       });
       return;
     }
@@ -261,9 +302,9 @@ export default function BookingSlot() {
   const proceedToBook = () => {
     if (selectedSlots.length === 0) {
       setAlertMessage({
-        type: 'error',
-        title: 'Booking Error',
-        description: 'Please select at least one slot to book.'
+        type: "error",
+        title: "Booking Error",
+        description: "Please select at least one slot to book.",
       });
       return;
     }
@@ -279,9 +320,9 @@ export default function BookingSlot() {
       return newBookings;
     });
     setAlertMessage({
-      type: 'success',
-      title: 'Booking Confirmed',
-      description: `Successfully booked ${selectedSlots.length} slot(s).`
+      type: "success",
+      title: "Booking Confirmed",
+      description: `Successfully booked ${selectedSlots.length} slot(s).`,
     });
     setSelectedSlots([]);
     setShowConfirmation(false);
@@ -299,9 +340,9 @@ export default function BookingSlot() {
         return newBookings;
       });
       setAlertMessage({
-        type: 'success',
-        title: 'Unbooking Confirmed',
-        description: 'Successfully unbooked the slot.'
+        type: "success",
+        title: "Unbooking Confirmed",
+        description: "Successfully unbooked the slot.",
       });
     }
     setUnbookingSlot(null);
@@ -317,27 +358,43 @@ export default function BookingSlot() {
     const slotDate = new Date(date);
     const [hours, minutes, period] = slot.match(/(\d+):(\d+) (\w+)/).slice(1);
     slotDate.setHours(
-      period === 'PM' && hours !== '12' ? parseInt(hours) + 12 : hours === '12' && period === 'AM' ? 0 : parseInt(hours),
+      period === "PM" && hours !== "12"
+        ? parseInt(hours) + 12
+        : hours === "12" && period === "AM"
+        ? 0
+        : parseInt(hours),
       parseInt(minutes)
     );
 
     const now = new Date();
-    const bookingKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${slot}`;
+    const bookingKey = `${date.getFullYear()}-${String(
+      date.getMonth() + 1
+    ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}-${slot}`;
 
-    if (isBefore(slotDate, now)) return 'unavailable';
-    if (bookings[bookingKey]) return 'booked';
-    if (selectedSlots.includes(bookingKey)) return 'selected';
-    return 'available';
+    if (isBefore(slotDate, now)) return "unavailable";
+    if (bookings[bookingKey]) return "booked";
+    if (selectedSlots.includes(bookingKey)) return "selected";
+    return "available";
   };
 
   return (
     <div className="bg-black bg-opacity-20 backdrop-blur-lg px-2 py-24 rounded-lg shadow-[0_0_20px_rgba(255,255,255,0.15)] overflow-hidden relative">
       <header className="text-center mb-8">
-        <h1 className="text-[#04153F] text-4xl font-bold mb-8 text-center">Booking Schedule</h1>
-        <p className="text-black text-lg mt-4">Don't lose your chance, book now!</p>
+        <h1 className="text-[#04153F] text-4xl font-bold mb-8 text-center">
+          Booking Schedule
+        </h1>
+        <p className="text-black text-lg mt-4">
+          Don't lose your chance, book now!
+        </p>
       </header>
       {alertMessage && (
-        <div className={`mb-4 p-4 rounded-md ${alertMessage.type === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+        <div
+          className={`mb-4 p-4 rounded-md ${
+            alertMessage.type === "error"
+              ? "bg-red-100 text-red-700"
+              : "bg-green-100 text-green-700"
+          }`}
+        >
           <h3 className="font-bold">{alertMessage.title}</h3>
           <p>{alertMessage.description}</p>
         </div>
@@ -349,13 +406,17 @@ export default function BookingSlot() {
               key={date.toDateString()}
               className={`p-2 sm:p-3 rounded-lg text-center cursor-pointer min-w-[80px] max-w-[120px] mx-2 ${
                 date.toDateString() === selectedDate.toDateString()
-                  ? 'bg-green-100 text-black'
-                  : 'bg-white text-black'
+                  ? "bg-green-100 text-black"
+                  : "bg-white text-black"
               } transition-transform`}
               onClick={() => handleDateClick(date)}
             >
-              <div className="text-xs sm:text-sm uppercase truncate">{days[date.getDay()]}</div>
-              <div className="text-lg font-bold border border-gray-300 p-1 mt-2 rounded-md shadow-md truncate">{date.getDate()}</div>
+              <div className="text-xs sm:text-sm uppercase truncate">
+                {days[date.getDay()]}
+              </div>
+              <div className="text-lg font-bold border border-gray-300 p-1 mt-2 rounded-md shadow-md truncate">
+                {date.getDate()}
+              </div>
             </div>
           ))}
         </div>
@@ -367,15 +428,17 @@ export default function BookingSlot() {
             <div
               key={`${selectedDate.toDateString()}-${slot}`}
               className={`p-2 sm:p-3 rounded-lg text-center font-semibold text-xs sm:text-sm min-h-[50px] flex flex-col justify-center ${
-                status === 'available'
-                  ? 'bg-white text-black cursor-pointer hover:bg-gray-100'
-                  : status === 'booked'
-                  ? 'bg-[#ffd700] text-[#1a1a2e] cursor-pointer hover:bg-[#e6c200]'
-                  : status === 'selected'
-                  ? 'bg-[#4CAF50] text-white cursor-pointer hover:bg-[#45a049]'
-                  : 'bg-[#cccccc] text-gray-600 cursor-not-allowed'
+                status === "available"
+                  ? "bg-white text-black cursor-pointer hover:bg-gray-100"
+                  : status === "booked"
+                  ? "bg-[#ffd700] text-[#1a1a2e] cursor-pointer hover:bg-[#e6c200]"
+                  : status === "selected"
+                  ? "bg-[#4CAF50] text-white cursor-pointer hover:bg-[#45a049]"
+                  : "bg-[#cccccc] text-gray-600 cursor-not-allowed"
               } transition-transform`}
-              onClick={() => status !== 'unavailable' && handleSlotClick(slot, selectedDate)}
+              onClick={() =>
+                status !== "unavailable" && handleSlotClick(slot, selectedDate)
+              }
             >
               <div className="font-bold mb-1">{slot}</div>
               <div className="text-xs">{status}</div>
@@ -385,11 +448,12 @@ export default function BookingSlot() {
       </div>
       {selectedSlots.length > 0 && (
         <div className="mt-8 text-center">
-          <button 
+          <button
             onClick={proceedToBook}
             className="bg-[#4CAF50] text-white py-2 px-4 rounded-md shadow-md hover:bg-[#45a049] focus:outline-none focus:ring-2 focus:ring-[#45a049] transition-colors"
           >
-            Proceed to Book ({selectedSlots.length} slot{selectedSlots.length > 1 ? 's' : ''})
+            Proceed to Book ({selectedSlots.length} slot
+            {selectedSlots.length > 1 ? "s" : ""})
           </button>
         </div>
       )}
@@ -397,7 +461,7 @@ export default function BookingSlot() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full">
             <h2 className="text-xl font-bold mb-4">Confirm Booking</h2>
-           
+
             <div className="flex justify-end space-x-4">
               <button
                 className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-colors"
@@ -422,9 +486,11 @@ export default function BookingSlot() {
             <p className="mb-4">Are you sure you want to unbook this slot?</p>
             {unbookingSlot && (
               <div className="mb-6 font-semibold p-2 bg-gray-100 rounded">
-                <div>{unbookingSlot.split('-')[3]}</div>
+                <div>{unbookingSlot.split("-")[3]}</div>
                 <div className="text-sm text-gray-600">
-                  {formatShortDate(new Date(unbookingSlot.split('-').slice(0, 3).join('-')))}
+                  {formatShortDate(
+                    new Date(unbookingSlot.split("-").slice(0, 3).join("-"))
+                  )}
                 </div>
               </div>
             )}
@@ -448,4 +514,3 @@ export default function BookingSlot() {
     </div>
   );
 }
-
