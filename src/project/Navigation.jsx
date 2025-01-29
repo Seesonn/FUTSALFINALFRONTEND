@@ -66,9 +66,9 @@
 // };
 
 // export default Navigation;
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { X, Menu } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { X, Menu } from "lucide-react";
 import logooo from "../assets/logo.png";
 
 const Navigation = () => {
@@ -85,8 +85,8 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -100,19 +100,19 @@ const Navigation = () => {
             <div className="md:hidden flex space-x-2 mr-4">
               <Link to="/login">
                 <button className="bg-[#A8BA0A] text-[#04153F] px-2 py-1 rounded text-xs font-semibold hover:bg-[#bbe000a0] hover:text-white transition-colors duration-200">
-                  User Login
+                  Userr Login
                 </button>
               </Link>
               <Link to="/login">
                 <button className="bg-[#A8BA0A] text-[#04153F] px-2 py-1 rounded text-xs font-semibold hover:bg-[#bbe000a0] hover:text-white transition-colors duration-200">
-                 Owner Login
+                  Owner Login
                 </button>
               </Link>
             </div>
             <button
               className="md:hidden z-30 w-8 h-8 flex items-center justify-center"
               onClick={toggleNav}
-              aria-label={isNavOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isNavOpen ? "Close menu" : "Open menu"}
             >
               <Menu className="text-white w-6 h-6" />
             </button>
@@ -124,7 +124,11 @@ const Navigation = () => {
               bg-[#1c234b] md:bg-transparent p-8 md:p-0
               shadow-lg md:shadow-none
               transition-all duration-300 ease-in-out z-30
-              ${isNavOpen ? 'translate-x-0' : 'translate-x-full md:translate-x-0'}
+              ${
+                isNavOpen
+                  ? "translate-x-0"
+                  : "translate-x-full md:translate-x-0"
+              }
             `}
           >
             <button
@@ -135,19 +139,39 @@ const Navigation = () => {
               <X className="w-6 h-6" />
             </button>
             <div className="mt-12 md:mt-0 flex flex-col md:flex-row md:items-center gap-4 md:gap-2">
-              <Link to="/" className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200">HOME</Link>
-              <Link to="/about" className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200">ABOUT</Link>
-              <Link to="/futsal-venues" className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200">FUTSAL</Link>
-              <Link to="/contact" className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200">CONTACT</Link>
+              <Link
+                to="/"
+                className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200"
+              >
+                HOME
+              </Link>
+              <Link
+                to="/about"
+                className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200"
+              >
+                ABOUT
+              </Link>
+              <Link
+                to="/futsal-venues"
+                className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200"
+              >
+                FUTSAL
+              </Link>
+              <Link
+                to="/contact"
+                className="hover:text-[#40fe90] py-3 px-3 w-full md:w-auto text-white transition-colors duration-200"
+              >
+                CONTACT
+              </Link>
               <div className="hidden md:flex space-x-2">
                 <Link to="/login">
                   <button className="bg-[#A8BA0A] text-[#04153F] px-3 py-1 rounded text-xs font-semibold hover:bg-[#bbe000a0] hover:text-white transition-colors duration-200">
-                   User Login
+                    User Login
                   </button>
                 </Link>
                 <Link to="/login">
                   <button className="bg-[#A8BA0A] text-[#04153F] px-3 py-1 rounded text-xs font-semibold hover:bg-[#bbe000a0] hover:text-white transition-colors duration-200">
-                  Owner Login
+                    Owner Login
                   </button>
                 </Link>
               </div>
@@ -167,4 +191,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-

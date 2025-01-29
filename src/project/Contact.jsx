@@ -1,14 +1,21 @@
-import React from 'react'
-import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail } from 'lucide-react'
-import contactbg from '../assets/ful.jpg'
+import React from "react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Phone,
+  Mail,
+} from "lucide-react";
+import contactbg from "../assets/ful.jpg";
 
 const Contact = () => {
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Here we would typically handle form submission
     // For now, we'll just log to the console
-    console.log('Form submitted')
-  }
+    console.log("Form submitted");
+  };
 
   return (
     <div className="container mx-auto bg-green-100/90  py-24">
@@ -18,9 +25,9 @@ const Contact = () => {
           alt="Futsal players on a court"
           className="object-cover w-full h-full absolute inset-0"
         />
-        
+
         <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
-        
+
         <div className="relative z-10 p-8">
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div className="text-white space-y-8">
@@ -35,13 +42,13 @@ const Contact = () => {
               <nav aria-label="Social media links">
                 <ul className="flex flex-wrap gap-4">
                   {[
-                    { name: 'Instagram', icon: Instagram, href: '#' },
-                    { name: 'Facebook', icon: Facebook, href: '#' },
-                    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-                    { name: 'Twitter', icon: Twitter, href: '#' },
+                    { name: "Instagram", icon: Instagram, href: "#" },
+                    { name: "Facebook", icon: Facebook, href: "#" },
+                    { name: "LinkedIn", icon: Linkedin, href: "#" },
+                    { name: "Twitter", icon: Twitter, href: "#" },
                   ].map((social) => (
                     <li key={social.name}>
-                      <a 
+                      <a
                         href={social.href}
                         className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors inline-block"
                         aria-label={social.name}
@@ -60,17 +67,25 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5" aria-hidden="true" />
-                  <a href="mailto:booking@futsalcenter.com" className="hover:underline">
+                  <a
+                    href="mailto:booking@futsalcenter.com"
+                    className="hover:underline"
+                  >
                     booking@futsalcenter.com
                   </a>
                 </div>
-               
               </address>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg p-6  space-y-2">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-lg p-6  space-y-2"
+            >
               <div className="space-y-2">
-                <label htmlFor="bookingInfo" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="bookingInfo"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Full Name
                 </label>
                 <input
@@ -82,7 +97,10 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Email
                 </label>
                 <input
@@ -94,7 +112,10 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Message
                 </label>
                 <textarea
@@ -104,7 +125,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <button 
+              <button
                 type="submit"
                 className="w-full bg-[#04153F] hover:bg-[#04153F]/90 text-white font-semibold py-2 px-4 rounded-md transition-colors"
               >
@@ -115,8 +136,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
-
+export default Contact;

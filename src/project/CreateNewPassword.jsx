@@ -4,7 +4,7 @@
 // export default function CreatNewPassword() {
 //   return (
 //     <div className="min-h-screen w-full font-roboto flex items-center justify-center relative overflow-hidden">
-    
+
 //       <div className="absolute inset-0 z-0">
 //         <img
 //           src={fgImage}
@@ -12,10 +12,9 @@
 //           className="w-full h-full object-cover opacity-90"
 //         />
 //       </div>
-      
-     
+
 //       <div className="absolute inset-0 backdrop-blur-sm z-10"></div>
-      
+
 //       {/* Content */}
 //       <div className="w-full max-w-md bg-green-100 bg-opacity-10 backdrop-blur-lg rounded-lg overflow-hidden shadow-lg z-20 m-4">
 //         {/* Form Container */}
@@ -34,14 +33,14 @@
 //                <input
 //                 type="password"
 //                 value={ confirmpassword}
-               
+
 //                 placeholder="Retype Password"
 //                 className="w-full p-3 bg-[#ebf8ff] border-none rounded-md"
 //                 required
 //               />
 //             </div>
 //             <Link to="/verify" className="w-full">
-//               <button 
+//               <button
 //                 type="submit"
 //                 className="w-full p-3 bg-[#04153F] text-white rounded-md flex items-center justify-center cursor-pointer hover:bg-[#04153F]/90 transition-colors"
 //               >
@@ -54,25 +53,25 @@
 //     </div>
 //   );
 // }
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../assets/ful.jpg';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import backgroundImage from "../assets/ful.jpg";
 
 export default function CreateNewPassword() {
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError("Passwords do not match");
       return;
     }
     // Here we would typically call an API to update the password
-    console.log('Password updated');
-    navigate('/login'); // Redirect to login page after password reset
+    console.log("Password updated");
+    navigate("/login"); // Redirect to login page after password reset
   };
 
   return (
@@ -84,12 +83,14 @@ export default function CreateNewPassword() {
           className="w-full h-full object-cover opacity-90"
         />
       </div>
-      
+
       <div className="absolute inset-0 backdrop-blur-sm z-10"></div>
-      
+
       <div className="w-full max-w-md bg-white bg-opacity-10 backdrop-blur-lg rounded-lg overflow-hidden shadow-lg z-20 m-4">
         <div className="w-full p-8 flex flex-col justify-center">
-          <h1 className="text-4xl font-bold mb-6 text-center text-white">Create New Password</h1>
+          <h1 className="text-4xl font-bold mb-6 text-center text-white">
+            Create New Password
+          </h1>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="password"
@@ -108,7 +109,7 @@ export default function CreateNewPassword() {
               required
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <button 
+            <button
               type="submit"
               className="w-full p-3 bg-[#04153F] text-white rounded-md flex items-center justify-center cursor-pointer hover:bg-[#04153F]/90 transition-colors"
             >
@@ -120,5 +121,3 @@ export default function CreateNewPassword() {
     </div>
   );
 }
-
-
