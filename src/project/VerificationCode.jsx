@@ -76,7 +76,7 @@ export default function VerificationCode() {
           Verify
         </h1>
         <p className="mb-4 text-center text-sm text-white sm:text-base">
-          Your code was sent to you via email
+          mlkjllkkk
         </p>
 
         <OtpInput
