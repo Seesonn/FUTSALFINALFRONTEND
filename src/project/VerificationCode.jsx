@@ -16,8 +16,7 @@ export default function VerificationCode() {
   }, []);
 
   const handleChange = (element, index) => {
-    if (isNaN(element.value)) return; // Prevent non-numeric input
-
+    if (isNaN(element.value)) return; // Prevent 
     const newOtp = [...otp];
     newOtp[index] = element.value;
     setOtp(newOtp);
