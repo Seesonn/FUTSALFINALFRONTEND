@@ -27,7 +27,7 @@ function App() {
         {/* bg-[#04153F] min-h-screen flex flex-col */}
         {/* <Navigation /> */}
         <main className="flex-grow">
-          {/* <Routes>
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact  />} />
@@ -42,12 +42,12 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
 
           
-          </Routes> */}
+          </Routes>
         </main>
-        <NotFound />
+        {/* <NotFound />
         <Dashboard />
         <Register />
-        <BookingSlot/>
+        <BookingSlot/> */}
         {/* <HomePage/> */}
       </div>
     </Router>
