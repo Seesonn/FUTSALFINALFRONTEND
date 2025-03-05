@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import full from "../assets/ful.jpg";
+import Navigation from "./Navigation";
 import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
@@ -59,6 +60,8 @@ const Contact = () => {
   };
 
   return (
+    <div>
+      <Navigation />
     <div
       className="min-h-screen flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
@@ -221,7 +224,7 @@ const Contact = () => {
       </button>
     </div>
   </div>
-)}
+)}</div>
     </div>
   );
 };
