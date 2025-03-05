@@ -28,7 +28,7 @@ export default function Hero() {
             </p>
 
             <div className="flex items-center gap-4 pt-2">
-              <Link to="/userlogin" className="group">
+              <Link to="/login" className="group">
                 <button className="bg-[#A8BA0A] text-[#04153F] px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 hover:bg-[#c6d92a] hover:shadow-lg hover:shadow-[#A8BA0A]/20">
                   JOIN NOW
                 </button>
