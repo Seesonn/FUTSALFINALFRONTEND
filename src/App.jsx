@@ -39,6 +39,7 @@ function App() {
             <Route path="/forget" element={<ForgotPassword />} />
             <Route path="/create-new-password" element={<CreatNewPassword />} />
             <Route path="/view" element={<View />} />
+             <Route path="*" element={<NotFound />} />
             <Route path="/dashboard" element={<Dashboard />} />
 
           
