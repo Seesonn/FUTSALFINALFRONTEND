@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { FaFutbol } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaFutbol } from "react-icons/fa";
 
 const NotFound = () => {
   return (
@@ -12,20 +12,24 @@ const NotFound = () => {
               className="inline-block mx-2"
               animate={{
                 y: [0, -20, 0],
-                rotate: [0, 180, 360],
+               
               }}
               transition={{
                 duration: 1,
                 repeat: Infinity,
-                ease: 'easeInOut',
+                ease: "easeInOut",
               }}
             >
-              <FaFutbol className="text-white h-16 w-16" />
+              <FaFutbol className="text-yellow-600 h-16 w-16" />
             </motion.div>
             4
           </h1>
-          <p className="mt-4 text-3xl font-bold text-white">Page Out of Bounds</p>
-          <p className="mt-2 text-xl text-blue-100">Oops! This page has been kicked into the stands.</p>
+          <p className="mt-4 text-3xl font-bold text-white">
+            Page Out of Bounds
+          </p>
+          <p className="mt-2 text-xl text-blue-100">
+            Oops! This page has been kicked into the stands.
+          </p>
         </div>
         <div className="mt-8">
           <a
